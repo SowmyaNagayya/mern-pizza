@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('./db.js')
 // const mongoose = require('mongoose');
 // const config = require('config');
 
@@ -17,7 +18,7 @@ app.use(express.json());
 
 //homepage in server side
 app.get("/", (req, res) => {
-    res.send("Server working");
+    res.send("Server working in " +  port);
 });
 
 app.listen(port, () => `Server running on port`);
