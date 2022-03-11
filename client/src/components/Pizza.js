@@ -9,7 +9,7 @@ function Pizza({ pizza }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <div style={{ margin: '50px' }} className="shadow-lg p-3 mb-5 bg-white rounded">
+        <div className="shadow-lg p-3 mb-5 bg-white rounded">
             <div onClick={handleShow}>
                 <h1>{pizza.name}</h1>
                 <img src={pizza.image} className="img-fluid" style={{ height: '200px', width: '200px' }} />
