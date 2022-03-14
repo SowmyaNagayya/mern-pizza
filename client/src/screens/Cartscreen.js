@@ -11,7 +11,7 @@ function Cartscreen() {
                 <h2 style={{fontSize:"40px", fontWeight:"bold"}}>My Cart</h2>
                 {cartItems.map(item=> {
                     return <div className="flex-container">
-                    <div style={{textAlign:"left"}} className="m-1">
+                    <div style={{textAlign:"left"}} className="m-1 w-100">
                         <h1>{item.name} [{item.variant}]</h1>
                         <h1>Price: {item.quantity} * {item.prices[0][item.variant]} = {item.price}</h1>
                         <h1 style={{display:'inline'}}>Quantity: </h1>
@@ -20,11 +20,13 @@ function Cartscreen() {
                         <i className="fa fa-minus" aria-hidden="true"></i>
                         <hr/>
                     </div>
-                    <div>
-                        
+
+                    <div className="m-1 w-100">
+                        <img src={item.image} style={{ height:'80px', width:'80px' }}  />                      
                     </div>
-                    <div>
-                        
+
+                    <div className="m-1 w-100">
+                       <i className="fa fa-trash mt-4" aria-hidden="true"></i>                        
                     </div>
                 </div>
                 })}
