@@ -4,15 +4,25 @@ export const addToCart= (pizza, quantity, variant)=>(dispatch, getState)=> {
         _id: pizza._id,
         image: pizza.image,
         variant: variant,
-        quantity: quantity,
+        quantity: Number(quantity),
         prices: pizza.prices,
         price: pizza.prices[0][variant] * quantity
     }
 
-    dispatch({type: 'ADD_TO_CART', payload: cartItem})
+    if(cartItem.quantity>10) {
+        alert("You cann't add more than 10 Quantities")
+    } else {
+        if(cartItem.quantity<1) {
+            dispatch({type: 'DELETE_FROM_CART', payload:pizza})
+
+        } else {
+            dispatch({type: 'ADD_TO_CART', payload: cartItem})
+        }
+        
+    }    
 
     const cartItems = getState().cartReducer.cartItems
-    
+
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
 }
 
