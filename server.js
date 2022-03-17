@@ -9,8 +9,10 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 const pizzasRoute = require('./routes/pizzasRoute');
+const userRoute = require('./routes/userRoute')
 
 app.use('/api/pizzas/', pizzasRoute);
+app.use('/api/user/', userRoute);
 
 
 //homepage in server side
