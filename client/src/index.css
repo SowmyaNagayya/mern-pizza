@@ -57,3 +57,8 @@ select {
   color: red !important;
   margin: 5px !important;
 }
+
+input {
+  margin-top : 10px !important;
+  box-shadow: none !important;
+}
