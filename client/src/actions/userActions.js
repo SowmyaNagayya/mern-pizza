@@ -6,7 +6,7 @@ export const registerUser = (user,error) =>async dispatch=> {
         console.log(response)
         dispatch({type: 'USER_REGISTER_SUCCESS'})
         localStorage.setItem('currentUser', JSON.stringify(response.data))
-        window.location.href='/'
+        // window.location.href='/'
     } catch {
         dispatch({type: 'USER_REGISTER_FAILED', payload: error})      
     }
