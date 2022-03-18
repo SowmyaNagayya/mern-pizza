@@ -8,13 +8,19 @@ function Loginscreen() {
 
     const dispatch = useDispatch()
 
+    useEffect(() => {
+        if(localStorage.getItem('currentUser')) {
+            window.location.href='/'
+        }
+    }, [])
+
     function login() {
         
             const user = {
                 email,
                 password
             }
-            console.log(user);
+            // console.log(user);
             dispatch(loginUser(user));
     }
   return (
