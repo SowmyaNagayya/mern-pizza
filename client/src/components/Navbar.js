@@ -12,17 +12,17 @@ function NavBar() {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNav" >
-                    <ul className="navbar-nav ms-auto" style={{textAlign: 'right'}}>
+                <div className="collapse navbar-collapse" id="navbarNav" style={{marginLeft:'990px'}} >
+                    <ul className="navbar-nav ms-auto" >
 
                         {currentUser ? (
-                        <div className="dropdown">
-                        <a className="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div className="dropdown mt-4">
+                        <a className="dropdown-toggle" style={{color: 'black', fontWeight:'bold'}}type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           {currentUser.name}
                         </a>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a className="dropdown-item" href="#">Orders</a>
-                          <a className="dropdown-item" href="#">Logout</a>
+                        <div className="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+                          <a className="dropdown-item" style={{fontWeight: 'bold'}} href="#">Orders</a>
+                          <a className="dropdown-item" style={{fontWeight: 'bold'}} href="#">Logout</a>
                         </div>
                       </div>
                         ) : (
