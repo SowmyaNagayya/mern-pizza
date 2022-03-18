@@ -1,6 +1,9 @@
 import React from "react";
 import './App.css';
-import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+// import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/dropdown';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Navbar from "./components/Navbar"
 import Homescreen from "./screens/Homescreen";
