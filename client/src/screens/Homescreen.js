@@ -4,6 +4,7 @@ import { getAllPizzas } from '../actions/pizzaActions';
 // import pizzas from '../pizzasdata';
 import Pizza from '../components/Pizza';
 import Loading from '../components/Loading';
+import Error from '../components/Error';
 
 function Homescreen() {
     const dispatch = useDispatch()
@@ -15,7 +16,7 @@ function Homescreen() {
     return (
         <div>
             <div className="row justify-content-center">
-                {loading ? (<Loading />) : error ? (<h1>Something went wrong</h1>) : (
+                {loading ? (<Loading />) : error ? (<Error error='Something Went Wrong'/>) : (
                     pizzas.map(pizza => {
                         return <div className="col-md-3 m-3" key={pizza._id}>
                             <div >
