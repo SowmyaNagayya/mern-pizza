@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPizzas } from '../actions/pizzaActions';
+import Filter from '../components/Filter';
 // import pizzas from '../pizzasdata';
 import Pizza from '../components/Pizza';
 import Loading from '../components/Loading';
@@ -15,6 +16,7 @@ function Homescreen() {
     }, [])
     return (
         <div>
+            <Filter />
             <div className="row justify-content-center">
                 {loading ? (<Loading />) : error ? (<Error error='Something Went Wrong'/>) : (
                     pizzas.map(pizza => {
