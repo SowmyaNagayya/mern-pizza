@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Pizzalist() {
   return (
-    <div>Pizzalist</div>
+    <div>
+        <h1>Pizzalist</h1>
+    </div>
   )
 }

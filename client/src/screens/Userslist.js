@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Userslist() {
   return (
-    <div>Userslist</div>
+    <div>
+        <h1>Userslist</h1>
+    </div>
   )
 }
