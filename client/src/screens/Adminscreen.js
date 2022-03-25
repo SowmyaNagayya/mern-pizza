@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { BrowserRouter as Switch, Route } from 'react-router-dom';
+// import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+// // import {Link} from "react-router-dom"
+// // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Userslist from "../screens/Userslist";
 import Orderslist from "../screens/Orderslist";
 import Addpizza from "../screens/Addpizza";
@@ -22,18 +25,20 @@ export default function Adminscreen() {
                 <div className="col-md-10">
                     <h1 style={{ fontSize: '35px' }}>Admin Panel</h1>
                     <ul className="adminfunctions">
-                        <li><a href="/admin/userslist">Users List</a></li>
-                        <li><a href="/admin/pizzalist">Pizzas List</a></li>
-                        <li><a href="/admin/addpizza">Add New Pizza</a></li>
-                        <li><a href="/admin/orderslist">Orders List</a></li>
+                        <Link to={'/admin/userslist'}>Users list</Link>
+                        <Link to={'/admin/orderslist'}>Orders list</Link>
+                        <Link to={'/admin/pizzalist'}>Pizza list</Link>
+                        <Link to={'/admin/addpizza'}>Add Pizza</Link>
                     </ul>
-                    
-                    <Switch>
-                        <Route path="/admin/userslist" component={Userslist} exact />
-                        <Route path="/admin/orderslist" component={Orderslist} exact />
-                        <Route path="/admin/pizzalist" component={Pizzalist} exact />
-                        <Route path="/admin/addpizza" component={Addpizza} exact />
-                    </Switch>
+                    <Router>
+                        <Routes>
+                        <Route path="/admin" exact element={<Userslist />}  /> 
+                        <Route path="/admin/userslist" exact element={<Userslist />}  />
+                        <Route path="/admin/orderslist" exact element={<Orderslist />}  />
+                        <Route path="/admin/pizzalist" exact element={<Pizzalist />}  />
+                        <Route path="/admin/addpizza" exact element={<Addpizza />}  />
+                        </Routes>
+                    </Router>
                 </div>
             </div>
         </div>
